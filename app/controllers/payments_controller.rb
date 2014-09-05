@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
 require 'json'
+require 'net/http'
 	def index
 		
 	end

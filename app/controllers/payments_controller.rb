@@ -1,8 +1,5 @@
 class PaymentsController < ApplicationController
-require 'json'
-require 'net/http'
-require 'net/https'
-require 'uri'
+
 	def index
 		
 	end

@@ -1,0 +1,50 @@
+<%= form_for @payment, url: "/payments/create" do |f| %>
+<% if @payment.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@payment.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @payment.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= f.label :Nombre %>
+<%= f.text_field :nombre %><br />
+<%= f.label :Apellidos %>
+<%= f.text_field :apellidos %><br />
+<%= f.label  :Numero_de_tarjeta %>
+<%= f.number_field :numero_tarjeta %><br />
+<%= f.label :Cp %>
+<%= f.text_field :cp %><br />
+<%= f.label :Cvt %>
+<%= f.number_field :cvt %><br />
+<%= f.label  :Monto%>
+<%= f.number_field :monto %><br />
+<%= f.label :Mes_de_Expiración %>
+<%= f.text_field :mes_expiracion %><br />
+<%= f.label :Año_de_expireción %>
+<%= f.text_field :anyo_expiracion %><br />
+<%= f.label :Email %>
+<%= f.text_field :email %><br />
+<%= f.label :Teléfono %>
+<%= f.number_field :telefono %><br />
+<%= f.label  :Celular%>
+<%= f.number_field :celular %><br />
+<%= f.label  :Calle_y_número%>
+<%= f.text_field :calle_y_numero %><br />
+<%= f.label :Colonia %>
+<%= f.text_field :colonia %><br />
+<%= f.label  :Municipio%>
+<%= f.text_field :municipio %><br />
+<%= f.label  :Estado%>
+<%= f.text_field :estado%><br />
+<%= f.label  :Pais %>
+<%= f.text_field :pais%><br />
+<%= f.submit %>
+<% end %>
+
+
+  

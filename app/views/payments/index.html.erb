@@ -1,0 +1,3 @@
+<%= @payment.response["WebServices_Transacciones"]["transaccion"]["error"].map  do |key|%>
+<p> <%= key[0] %></p>
+<% end %>

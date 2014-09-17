@@ -1,3 +1,10 @@
+
+<% if @payment.response["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
+
 <%= @payment.response["WebServices_Transacciones"]["transaccion"]["error"].map  do |key|%>
-<p> <%= key[0] %></p>
+<p> <%= "#{key[0]} - #{key[1]}" %></p>
 <% end %>
+<% end %>
+<div>
+	<%= @payment.response %>
+</div>

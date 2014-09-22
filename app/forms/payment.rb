@@ -69,27 +69,6 @@ class Payment
 
 
 
-  
-
-  # validates :nombre, format: { with: /^[a-zA-Z\d\s]*$/,
-  #   message: "%{value} Sólo se permiten letras" }, :on => :create
-  # validates :apellidos, format: { with: /\A[a-zA-Z]+\z/,
-  #   message: "%{value} Sólo se permiten letras" }, :on => :create
-  # validates :colonia, format: { with: /\A[a-zA-Z]+\z/,
-  #   message: "%{value} Sólo se permiten letras" }, :on => :create
-  # validates :municipio, format: { with: /\A[a-zA-Z]+\z/,
-  #   message: "%{value} Sólo se permiten letras" }, :on => :create
-  # validates :estado, format: { with: /\A[a-zA-Z]+\z/,
-  #   message: "%{value} Sólo se permiten letras" }, :on => :create
-  # validates :pais, format: { with: /\A[a-zA-Z]+\z/,
-  #   message: "%{value} Sólo se permiten letras" }, :on => :create
-
-  # validates_format_of :pais, :with => /\A([-a-z0-9!\#$%&'*+\/=?^_`{|}~]+\.)*[-a-z0-9!\#$%&'*+\/=?^_`{|}~]+@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
-  
-
-
-  
-
   attr_accessor  :nombre, :apellidos, :numero_tarjeta, :cp, :cvt, :monto, :mes_expiracion, :anyo_expiracion, :email, :telefono, :celular, :calle_y_numero, :colonia, :municipio, :estado, :pais, :response
 
   def persisted?

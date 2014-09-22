@@ -1,50 +1,159 @@
-<%= form_for @payment, url: "/payments/create" do |f| %>
-<% if @payment.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
-      The form contains <%= pluralize(@payment.errors.count, "error") %>.
-    </div>
-    <ul>
-    <% @payment.errors.full_messages.each do |msg| %>
-      <li>* <%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-<%= f.label :Nombre %>
-<%= f.text_field :nombre %><br />
-<%= f.label :Apellidos %>
-<%= f.text_field :apellidos %><br />
-<%= f.label  :Numero_de_tarjeta %>
-<%= f.number_field :numero_tarjeta %><br />
-<%= f.label :Cp %>
-<%= f.text_field :cp %><br />
-<%= f.label :Cvt %>
-<%= f.number_field :cvt %><br />
-<%= f.label  :Monto%>
-<%= f.number_field :monto %><br />
-<%= f.label :Mes_de_Expiración %>
-<%= f.text_field :mes_expiracion %><br />
-<%= f.label :Año_de_expireción %>
-<%= f.text_field :anyo_expiracion %><br />
-<%= f.label :Email %>
-<%= f.text_field :email %><br />
-<%= f.label :Teléfono %>
-<%= f.number_field :telefono %><br />
-<%= f.label  :Celular%>
-<%= f.number_field :celular %><br />
-<%= f.label  :Calle_y_número%>
-<%= f.text_field :calle_y_numero %><br />
-<%= f.label :Colonia %>
-<%= f.text_field :colonia %><br />
-<%= f.label  :Municipio%>
-<%= f.text_field :municipio %><br />
-<%= f.label  :Estado%>
-<%= f.text_field :estado%><br />
-<%= f.label  :Pais %>
-<%= f.text_field :pais%><br />
-<%= f.submit %>
-<% end %>
+<body class="wood">
+  <div id="wrap" class="boxed">
+    
+    <header>
+      <div class="container clearfix">
+        
+        <div class="one-third column">
+          <div class="logo">
+            <a href="http://deceroatres.org">
+              <img src="/assets/143x59_logo-01-01.png" alt="De Cero A Tres Fundación A.C.">
+            </a>
+          </div>
+          </div><!-- End Logo -->
+          
+          <div class="two-thirds column">
+            <nav id="menu" class="navigation">
+              
+              <ul id="nav" class="menu">
+                <li id="menu-item-152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-152" style="z-index: 97;"><a href="http://deceroatres.org/de-cero-a-tres/quienes-somos/" class="">Regresar a deceroatres.org<span class="downarrowclass"></span></a>
+                <ul class="sub-menu" style="top: 87px; visibility: visible; left: 0px; width: 180px; display: none;">
+                  
+                  
+                </nav>
+                </div><!-- End Menu -->
+                
+                <div class="sixteen columns"><hr></div>
+                
+                </div><!-- End Container -->
+              </header>
+              <!-- <<< End Header >>> -->
+              <div class="container content">
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 reg-page">
+                    <%= form_for @payment, url: "/payments/create" do |f| %>
+                    <%= render 'shared/error_messages', object: f.object %>
+                    <center>
+                    <h1>
+                    ¡Apóyanos con tu Donativo!</br> a través de Fundación <a href="http://deceroatres.org">
+              <img src="/assets/143x59_logo-01-01.png" alt="De Cero A Tres Fundación A.C.">
+            </a>  beneficias a niñas y niños en México.</br> Dona con confianza y sé parte de nuestra labor.</h1></center>
+                    <div class="reg-header"> </div>
+                    <h1>Hacer un donativo</h1>
+                    <div class="reg-header"> </div>
+                    <div class="form-group">
+                      <%= f.label  :Monto, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.number_field :monto, class: "form-control", id: "inputEmail3", placeholder:"$ Monto "%>
+                      </div>
+                    </div></br></br></br>
+                    <div class="form-group">
+                      <%= f.label  :Número_de_tarjeta, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.number_field :numero_tarjeta, class: "form-control", id: "inputEmail3", placeholder:" Número de tarjeta "%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label :Cvt, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.number_field :cvt , class: "form-control", id: "inputEmail3", placeholder:" Ctv "%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label :Mes_de_Expiración, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.select :mes_expiracion,["Escoge un mes","01","02","03","04","05","06","07","08","09","10","11","12"], class: "form-control", id: "inputEmail3", placeholder:" Mes de expiración "%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label :Año_de_expireción, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.select :anyo_expiracion,["Escoge un año","14","15","17","18","19","20","21"], class: "form-control", id: "inputEmail3", placeholder:" Año de expiración "%>
+                      </div>
+                    </div></br></br>
+                    <h1>Datos personales </h1>
+                    <div class="reg-header"> </div>
+                    <div class="form-group">
+                      <%= f.label :Nombre, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%= f.text_field :nombre, class: "form-control", id: "inputEmail3", placeholder:"Nombre" %>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%=  f.label :Apellidos, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :apellidos, class: "form-control", id: "inputEmail3", placeholder:" Apellidos "%>
+                      </div>
+                    </div></br></br>
+                    
+                    <div class="form-group">
+                      <%= f.label :Email, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :email, class: "form-control", id: "inputEmail3", placeholder:" Email "%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label :Teléfono, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.number_field :telefono , class: "form-control", id: "inputEmail3", placeholder:" Teléfono "%>
+                      </div>
+                    </div></br></br>
+                    
+                    <div class="form-group">
+                      <%= f.label  :Celular, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.number_field :celular, class: "form-control", id: "inputEmail3", placeholder:"  Celular"%>
+                      </div>
+                    </div></br>
+                    <h1>Dirección </h1>
+                    <div class="reg-header"> </div>
+                    <div class="form-group">
+                      <%= f.label  :Calle_y_número, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :calle_y_numero, class: "form-control", id: "inputEmail3", placeholder:" Calle y número "%>
+                      </div>
+                    </div></br></br></br>
+                    <div class="form-group">
+                      <%= f.label :Colonia, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :colonia, class: "form-control", id: "inputEmail3", placeholder:" Colonia "%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label :Cp, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :cp, class: "form-control", id: "inputEmail3", placeholder:" Cp "%><br />
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label  :Municipio, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :municipio, class: "form-control", id: "inputEmail3", placeholder:" Municipio"%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label  :Estado, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        
 
-
-  
+                         <%= f.select(:estado, options_for_select(estados_mexico))%>
+                      </div>
+                    </div></br></br>
+                    <div class="form-group">
+                      <%= f.label  :Pais, class: "col-sm-2 control-label" %>
+                      <div class="col-sm-6">
+                        <%=  f.text_field :pais, class: "form-control", id: "inputEmail3", placeholder:" Pais "%>
+                      </div>
+                    </div></br></br>
+                    <dl class="dl-horizontal margin-left-button">
+                      
+                      <dd class="col-lg-3 text-right"> <%= f.submit "Crear Donación", class: "btn btn-primary " %> </dd></br></br>
+                      
+                    </dl>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              
+            </body>
+            <!-- End -->

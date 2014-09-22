@@ -8,25 +8,25 @@ class PaymentsController < ApplicationController
 	end
 	def create
 		@payment = Payment.new
-		puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
-		puts ">> entre a create"
-		if @payment.submit(params[:payment])
+		
+	puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx' 
+    puts ">> entre a create"
+    if @payment.submit(params[:payment])
+    	flash[:success]= "peticion lista para enviar"
+     
+    @payment.enviar
+    
+    
 
-			flash[:success]= "peticion lista para enviar"
-			url= "https://www.pagofacil.net/ws/public/Wsrtransaccion/index/format/json?method=transaccion&data[nombre]=#{@payment.nombre}&data[apellidos]=#{@payment.apellidos}&data[numeroTarjeta]=#{@payment.numero_tarjeta}&data[cvt]=#{@payment.cvt}&data[cp]=#{@payment.cp}&data[mesExpiracion]=#{@payment.mes_expiracion}&data[anyoExpiracion]=#{@payment.anyo_expiracion}&data[monto]=#{@payment.monto}&data[idSucursal]=e84f1d3b924c07e52a8c999047373106c10e582c&data[idUsuario]=82d4a1cf37137e7147602a7e6fa64d8e6c0c0b9c&data[idServicio]=3&data[email]=#{@payment.email}&data[telefono]=#{@payment.telefono}&data[celular]=#{@payment.celular}&data[calleyNumero]=#{@payment.calle_y_numero}&data[colonia]=#{@payment.colonia}&data[municipio]=#{@payment.municipio}&data[estado]=#{@payment.estado}&data[pais]=#{@payment.pais}"
-			puts "Lectura de url"
-			encoded_url = URI.encode(url)
-			http_request = Net::HTTP.get_response(URI.parse(encoded_url)).body
-			puts ">> entre a decodificar el json"
-		 	data = ActiveSupport::JSON.decode(http_request) #.to_json
-			puts ">> entre a asignar data"
-			@payment.response = data
-			render 'index'
-		else
-			render 'new'
-		end
-		puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
-	end
+      render 'index'
+    else
+      render 'new'
+    end
+		
+  end 
+    puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+
 end
 
 

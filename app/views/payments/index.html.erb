@@ -1,10 +1,65 @@
+<body class="wood">
+	<div id="wrap" class="boxed">
+		
+		<header>
+			<div class="container clearfix">
+				
+				<div class="one-third column">
+					<div class="logo">
+						<a href="http://deceroatres.org">
+							<img src="/assets/143x59_logo-01-01.png" alt="De Cero A Tres Fundación A.C.">
+						</a>
+					</div>
+					</div><!-- End Logo -->
+					
+					<div class="two-thirds column">
+						<nav id="menu" class="navigation">
+							
+							<ul id="nav" class="menu">
+								<li id="menu-item-152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-152" style="z-index: 97;"><a href="http://deceroatres.org/" class="">Regresar a deceroatres.org<span class="downarrowclass"></span></a>
+								<ul class="sub-menu" style="top: 87px; visibility: visible; left: 0px; width: 180px; display: none;">
+									
+									
+								</nav>
+								</div><!-- End Menu -->
+								
+								<div class="sixteen columns"><hr></div>
+								
+								</div><!-- End Container -->
+							</header>
+							<!-- <<< End Header >>> -->
+							<div class="container content">
+								<div class="row">
+									<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 reg-page">
 
-<% if @payment.response["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
+										<% if @payment.response["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
+										<% @payment.response["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
+										<div class="table-responsive">
+											<dl class="dl-horizontal">
+												
+												<dt> <h2 class="color-error"><%= key[0] %>:</h2></dt>
+												<dd> <h4><%= key[1] %></h4></dd>
+											</dl>
+										</div>
+										<% end %>
 
-<%= @payment.response["WebServices_Transacciones"]["transaccion"]["error"].map  do |key|%>
-<p> <%= "#{key[0]} - #{key[1]}" %></p>
-<% end %>
-<% end %>
-<div>
-	<%= @payment.response %>
-</div>
+										
+
+					<% else %>
+					<center>
+										<h1>
+      LA FUNCACIÓN <a href="http://deceroatres.org">	<img src="/assets/143x59_logo-01-01.png" alt="De Cero A Tres Fundación A.C.">
+						</a>TE DA LAS GRACIAS POR TU DOCACIÓN.</br></br> El apoyo de personas como tú, nos permite ayudar a niñas y niños en México.
+      
+      
+    </h1></center>
+									
+					<% end %>
+										
+									
+				
+									</div>
+								</div>
+							</div>
+						</body>
+						<!-- End -->

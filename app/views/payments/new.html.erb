@@ -27,17 +27,27 @@
                 
                 </div><!-- End Container -->
               </header>
+              <div id="welcome">
+                <div class="sixteen columns col-md-12">
+                  <div class="welcome">
+                    <p> ¡Ayuda a tu pequeño a
+                    <span class="color">
+                    sentirse cómodo
+                    </span> en su nuevo mundo! </p>
+                  </div>
+                </div>
+              </div>
               <!-- <<< End Header >>> -->
               <div class="container content">
                 <div class="row">
                   <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 reg-page">
                     <%= form_for @payment, url: "/payments/create" do |f| %>
                     <%= render 'shared/error_messages', object: f.object %>
-                    <center>
+                    <div class="sixteen columns"></div>
+
+                    <!-- <center>
                     <h1>
-                    ¡Apóyanos con tu Donativo!</br> a través de Fundación <a href="http://deceroatres.org">
-              <img src="/assets/143x59_logo-01-01.png" alt="De Cero A Tres Fundación A.C.">
-            </a>  beneficias a niñas y niños en México.</br> Dona con confianza y sé parte de nuestra labor.</h1></center>
+                    ¡Apóyanos con tu Donativo!</br> </h1></center> -->
                     <div class="reg-header"> </div>
                     <h1>Hacer un donativo</h1>
                     <div class="reg-header"> </div>

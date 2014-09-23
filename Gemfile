@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#i18n
+#gem 'i18n', '~> 0.6.9'
 
 #bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'

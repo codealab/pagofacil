@@ -63,6 +63,9 @@ body.subtlenet2 { background:url(../bg/subtlenet2.jpg) repeat; }
 	display:block;
 }
 
+body{
+	font-family: 'TitilliumText22LBold', Arial, sans-serif!important;
+}
 
 /* end boxed */
 
@@ -191,12 +194,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Import Basic Files
 ================================================== */
 
-@import url("css/fonts.css");               /* Custom Fonts */
-@import url("css/base.css");                /* Reset & Basics */
-@import url("css/skeleton.css");            /* Base 960 Grid */
-@import url("css/javascript.css");          /* Css Styles for js scripts */
-@import url("css/shortcodes.css");          /* Css Styles for shortcodes */
-@import url("css/custom.css");              /* Css Styles File for any changes you want to add */
+@import url("assets/font/fonts.css");               /* Custom Fonts */
+@import url("assets/base.css");                /* Reset & Basics */
+@import url("assets/skeleton.css");            /* Base 960 Grid */
+@import url("assets/javascript.css");          /* Css Styles for js scripts */
+@import url("assets/shortcodes.css");          /* Css Styles for shortcodes */
+@import url("assets/custom.css");              /* Css Styles File for any changes you want to add */
 
 /* Site Styles
 ================================================== */

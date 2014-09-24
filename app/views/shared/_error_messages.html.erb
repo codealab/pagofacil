@@ -5,7 +5,7 @@
       <%  if object.errors.count == 1 %>error<% else %>errores<%end%>
       <ul>
         <% object.errors.full_messages.each do |msg| %>
-        <li>El <%= msg %></li>
+        <li><%= msg %></li>
         <% end %>
       </ul>
     </div>

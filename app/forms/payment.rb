@@ -1,37 +1,12 @@
 class Payment
   # Rails 4: include ActiveModel::Model
+  include ActiveModel::Model
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  validates :monto,  presence: {message: "El monto no debe estar en blanco"}
-  validates :numero_tarjeta,  presence: {message: "El número de tarjeta no debe estar en blanco"}
-  validates :cvt,  presence: {message: " Cvt no debe estar en blanco"}
-  validates :anyo_expiracion,  presence: {message: "El año de expiracion no debe estar en blanco"}
-  validates :nombre,  presence: {message: "El nombre no debe estar en blanco"}
-  validates :apellidos,  presence: {message: "Los apellidos no debe estar en blanco"}
-  validates :email,  presence: {message: "El email no debe estar en blanco"}
-  validates :telefono,  presence: {message: "El teléfono no debe estar en blanco"}
-  validates :celular,  presence: {message: "El celular no debe estar en blanco"}
-  validates :calle_y_numero,  presence: {message: "La calle y numero no debe estar en blanco"}
-  validates :colonia, presence: {message: "La colonia no debe estar en blanco"}
-  validates :cp,  presence: {message: "Cp no debe estar en blanco"}
-  validates :municipio,  presence: {message: "El municipio no debe estar en blanco"}
-  validates :estado,  presence: {message: "El estado no debe estar en blanco"}
-  validates :pais,  presence: {message: "El pais no debe estar en blanco"}
-
-  validates :monto, numericality: {message: " Monto debe ser número"}
-  validates :numero_tarjeta, numericality: {message: " El número de trajeta debe ser número"}
-  validates :cvt, numericality: {message: " El Cvt debe ser número"}
-  validates :cp, numericality: {message: " El Cp debe ser número"}
-  validates :celular, numericality: {message: " El Celular debe ser número "}
-  validates :telefono, numericality: {message: " El  Teléfono debe ser número"}
- 
-
+  validates_presence_of :monto, :numero_tarjeta, :cvt, :anyo_expiracion, :nombre, :apellidos, :email, :telefono, :celular, :calle_y_numero, :colonia, :cp, :municipio, :estado, :pais
 
   
-
- 
-
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   
    validates_numericality_of :monto,  {:greater_than_or_equal_to => 100 , message: " El monto debe ser mayor o igual a $100 pesos"}
@@ -74,14 +49,14 @@ class Payment
     minimum: 10,
     maximum: 10,
    
-    too_long: " %{value} es demasiado largo debe ser %{count} digitos",
-    too_short: "%{value} es muy corto debe ser %{count} digitos"
+    too_long: " %{value} El celular es demasiado largo (mínimo %{count} caracteres)",
+    too_short: "%{value} El celular es demasiado corto (mínimo %{count} caracteres)"
   }
   validates :telefono, length: {
     minimum: 10,
     maximum: 10,
    
-    too_long: " %{value} El teléfono es demasiado largo (mínimo %{count} caracteres)",
+    too_long: "%{value} El teléfono es demasiado largo (mínimo %{count} caracteres) ",
     too_short: "%{value} El teléfono es demasiado corto (mínimo %{count} caracteres)"
   }
 

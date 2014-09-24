@@ -118,7 +118,7 @@ en:
       second: Segundos
       year: Año
   errors: &errors
-    format: ! '%{message}'
+    format: ! '%{attribute} %{message}'
     activerecord:
     errors:
       template:
@@ -145,15 +145,15 @@ en:
       odd: debe ser un número non
       record_invalid: ! 'La validación falló: %{errors}'
       taken: ya ha sido tomado
-      # too_long:
-      #   one: es demasiado largo (máximo 1 caracter)
-      #   other: es demasiado largo (máximo %{count} caracteres)
-      # too_short:
-      #   one: es demasiado corto (mínimo 1 caracter)
-      #   other: es demasiado corto (mínimo %{count} caracteres)
-      # wrong_length:
-      #   one: longitud errónea (debe ser de 1 caracter)
-      #   other: longitud errónea (debe ser de %{count} caracteres)
+      too_long:
+        one: es demasiado largo (máximo 1 caracter)
+        other: es demasiado largo (máximo %{count} caracteres)
+      too_short:
+        one: es demasiado corto (mínimo 1 caracter)
+        other: es demasiado corto (mínimo %{count} caracteres)
+      wrong_length:
+        one: longitud errónea (debe ser de 1 caracter)
+        other: longitud errónea (debe ser de %{count} caracteres)
     template:
       body: ! 'Revise que los siguientes campos sean válidos:'
       header:
@@ -231,4 +231,23 @@ en:
   activerecord:
     errors:
       <<: *errors
-    
+    models:
+      payment: "Pago"
+    attributes:
+      payment:
+        nombre: "El nombre"
+        apellidos: "Los apellidos"
+        numero_tarjeta: "El número de la tarjeta"
+        cp: "El codigo postal"
+        cvt: "El Cvt"
+        monto: "El monto"
+        mes_expiracion: "El mes de expiración"
+        anyo_expiracion: "El año de expiración"
+        email: "El email"
+        telefono: "El teléfono"
+        celular: "El celular"
+        calle_y_numero: "La calle y número"
+        colonia: "La colonia"
+        municipio: "El municipio"
+        estado: "El estado"
+        pais: "El pais"

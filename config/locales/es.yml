@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  
   date:
     abbr_day_names:
     - dom
@@ -226,11 +225,6 @@ en:
       short: ! '%d de %b a las %H:%M hrs'
     pm: pm
   activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
     models:
       payment: "Pago"
     attributes:

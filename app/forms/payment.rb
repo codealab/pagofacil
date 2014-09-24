@@ -4,27 +4,30 @@ class Payment
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  validates_presence_of :monto, :numero_tarjeta, :cvt, :anyo_expiracion, :nombre, :apellidos, :email, :telefono, :celular, :calle_y_numero, :colonia, :cp, :municipio, :estado, :pais
+
+  validates_presence_of :monto, :numero_tarjeta, :cvt,:mes_expiracion, :anyo_expiracion, :nombre, :apellidos, :email, :telefono, :celular, :calle_y_numero, :colonia, :cp, :municipio, :estado, :pais
+
+
 
   
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   
-   validates_numericality_of :monto,  {:greater_than_or_equal_to => 100 , message: " El monto debe ser mayor o igual a $100 pesos"}
+   validates_numericality_of :monto,  {:greater_than_or_equal_to => 100 , message: " debe ser mayor o igual a $100 pesos"}
   
 
   validates :numero_tarjeta, length: {
     minimum: 16,
     maximum: 16,
    
-    too_long: " %{value} El número de la tarjeta es demasiado largo (mínimo %{count} caracteres)",
-    too_short: "%{value} El número de la tarjeta es demasiado corto (mínimo %{count} caracteres)"
+    too_long: " %{value} es demasiado largo (mínimo %{count} caracteres)",
+    too_short: "%{value} es demasiado corto (mínimo %{count} caracteres)"
   }
   validates :cvt, length: {
     minimum: 4,
     maximum: 4,
    
-    too_long: " %{value} El Cvt  es demasiado largo (mínimo %{count} caracteres)",
-    too_short: "%{value} El Cvt es demasiado corto (mínimo %{count} caracteres)"
+    too_long: " %{value}  es demasiado largo (mínimo %{count} caracteres)",
+    too_short: "%{value}  es demasiado corto (mínimo %{count} caracteres)"
   }
 
   
@@ -49,15 +52,15 @@ class Payment
     minimum: 10,
     maximum: 10,
    
-    too_long: " %{value} El celular es demasiado largo (mínimo %{count} caracteres)",
-    too_short: "%{value} El celular es demasiado corto (mínimo %{count} caracteres)"
+    too_long: " %{value}  es demasiado largo (mínimo %{count} caracteres)",
+    too_short: "%{value}  es demasiado corto (mínimo %{count} caracteres)"
   }
   validates :telefono, length: {
     minimum: 10,
     maximum: 10,
    
-    too_long: "%{value} El teléfono es demasiado largo (mínimo %{count} caracteres) ",
-    too_short: "%{value} El teléfono es demasiado corto (mínimo %{count} caracteres)"
+    too_long: "%{value}  es demasiado largo (mínimo %{count} caracteres) ",
+    too_short: "%{value} es demasiado corto (mínimo %{count} caracteres)"
   }
 
 

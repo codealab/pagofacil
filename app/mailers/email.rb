@@ -1,7 +1,7 @@
 class Email < ActionMailer::Base
 	
-  default from: "marco.antonio.medina81@gmail.com"
-  default to: "contacto@deceroatres.com"
+  default from: "contacto@deceroatres.com"
+  default to: "marco.antonio.medina81@gmail.com"
 
   def send_email(contact)
   	@contact = contact

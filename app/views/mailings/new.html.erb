@@ -1,8 +1,6 @@
  <%= form_for @mailing,url: "/mailings/create" do |form| %>
  <%= form.label :nombre %>
  <%= form.text_field :name %><br />
- <%= form.label :correo %>
- <%= form.text_field :email %><br />
  <%= form.label :mensaje %>
  <%= form.text_area :message %><br />
  <%= form.submit %>

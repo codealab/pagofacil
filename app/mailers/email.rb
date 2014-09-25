@@ -2,9 +2,9 @@ class Email < ActionMailer::Base
   
 
   def send_email(contact)
-  	@contact = contact
+  	
 
-  	mail(:to => "marco.antonio.medina81@gmail.com", :subject => "Donacion", :from  => "contacto@deceroatres.com")
+  	mail(:to => "marco.antonio.medina81@gmail.com", :subject => "Donacion", :from  => "marco.antonio.medina81@gmail.com")
   	
   end
 end

@@ -1,2 +1,2 @@
-<%= @contact.message %>
+
 Thank you for registering!

@@ -1,12 +1,9 @@
-<%= form_for @mailing, url: "/mailings/create" do |f| %>
-	<%= render 'shared/error_messages', object: f.object %>
-
-	<!--<%= f.label :Nombre %>:
-		<%= f.text_field :name, placeholder: 'Escribe tu nombre' %><br />
-		<%= f.label :Correo %>:
-		<%= f.text_field :email, placeholder: 'Escribe tu Email' %><br /> -->
-
-		<%= f.label :Mensaje %>:
-		<%= f.text_area :message, placeholder: 'Escribe un mensaje'%><br />
-		<%= f.submit %>
-<% end %>
+ <%= form_for @mailing,url: "/mailings/create" do |form| %>
+ <%= form.label :nombre %>
+ <%= form.text_field :name %><br />
+ <%= form.label :correo %>
+ <%= form.text_field :email %><br />
+ <%= form.label :mensaje %>
+ <%= form.text_area :message %><br />
+ <%= form.submit %>
+ <% end %>

@@ -1,2 +1,12 @@
-<h1>Mailings#new</h1>
-<p>Find me in app/views/mailings/new.html.erb</p>
+<%= form_for @mailing, url: "/mailings/create" do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<!-- <%= f.label :Nombre %>:
+		<%= f.text_field :name, placeholder: 'Escribe tu nombre' %><br />
+		<%= f.label :Correo %>:
+		<%= f.text_field :email, placeholder: 'Escribe tu Email' %><br /> -->
+
+		<%= f.label :Mensaje %>:
+		<%= f.text_area :message, placeholder: 'Escribe un mensaje'%><br />
+		<%= f.submit %>
+<% end %>

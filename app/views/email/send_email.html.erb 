@@ -1,12 +1,1 @@
-
-<% if @payment.response["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
-		<% @payment.response["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
-			<div class="table-responsive">
-				<dl class="dl-horizontal">
-					
-					<dt> <h2 class="color-error"><%= key[0] %>:</h2></dt>
-					<dd> <h4><%= key[1] %></h4></dd>
-				</dl>
-			</div>
-		<% end %>
-<% end %>
+<%= @contact.message %>

@@ -1,6 +1,7 @@
 Pagofacil::Application.routes.draw do
   get "mailings/index"
   get "mailings/new"
+  post "mailings/create"
   get "home/index"
   get "payments/new"
   post "payments/create"

@@ -1,11 +1,9 @@
 class Email < ActionMailer::Base
-	default :from => contact.email
-  
-
+	
   def send_email(contact)
   	
 @contact = contact
-  	mail( :to => 'marco.antonio.medina81@gmail.com', :subject => "Donacion")
+  	mail( :to => 'marco.antonio.medina81@gmail.com', :subject => "Donacion", :from => contact.email)
   	
   end
 end

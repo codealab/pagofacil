@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
   default to: "marco.antonio.medina81@gmail.com"
   def enviar_correo(user)
   	@user = user
-  	mail( :subject => "hola correo de prueba")
+  	mail( :subject => "Donación")
   	
   end
 end

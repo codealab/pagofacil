@@ -1,4 +1,1 @@
-<%= @contact.name %>
-<%= @contact.message %>
-
 Thank you for registering!

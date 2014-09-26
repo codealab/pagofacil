@@ -6,10 +6,10 @@ class MailingsController < ApplicationController
 	@mailing = MailingForm.new
 	end
 	def create
-	@mailing = MailingForm.new
+		@mailing = MailingForm.new
 		if @mailing.submit(params[:mailing_form])
-			Email.send_email(@mailing).deliver
-			flash[:success]= "Email creado exitosamente "
+	 			Email.send_amail(@mailing).deliver
+
 		end
 	end
 end

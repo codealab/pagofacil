@@ -1,6 +1,4 @@
 Pagofacil::Application.routes.draw do
-  resources :users
-
   get "mailings/index"
   get "mailings/new"
   post "mailings/create"

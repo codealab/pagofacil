@@ -26,8 +26,8 @@ class Payment
     minimum: 4,
     maximum: 4,
    
-    too_long: " %{value}  es demasiado largo (mínimo %{count} caracteres)",
-    too_short: "%{value}  es demasiado corto (mínimo %{count} caracteres)"
+    too_long: "   es demasiado largo (mínimo %{count} caracteres)",
+    too_short: "  es demasiado corto (mínimo %{count} caracteres)"
   }
 
   
@@ -35,15 +35,15 @@ class Payment
     minimum: 2,
     maximum: 2,
    
-    too_long: "debe ser %{count} digitos",
-    too_short: "debe ser %{count} digitos"
+    too_long: " debe ser %{count} digitos",
+    too_short: " debe ser %{count} digitos"
   }
   validates :anyo_expiracion, length: {
     minimum: 2,
     maximum: 2,
    
-    too_long: "debe ser %{count} digitos",
-    too_short: "debe ser %{count} digitos"
+    too_long: " debe ser %{count} digitos",
+    too_short: " debe ser %{count} digitos"
   }
 
   

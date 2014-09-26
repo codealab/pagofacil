@@ -8,7 +8,7 @@ class MailingsController < ApplicationController
 	def create
 		@mailing = MailingForm.new
 		if @mailing.submit(params[:mailing_form])
-	 			Email.send_amail(@mailing).deliver
+	 		Email.send_email(@mailing).deliver
 
 		end
 	end

@@ -1,9 +1,13 @@
- <%= form_for @mailing,url: "/mailings/create" do |form| %>
- 
-
- <%= form.label :mensaje %>
- <%= form.text_area :message %><br />
- <%= form.label :correo %>
- <%= form.text_field :email %>
- <%= form.submit %>
- <% end %>
+<%= form_for @mailing,url: "/mailings/create" do |f| %>
+ <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :mensaje %><br>
+    <%= f.text_field :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

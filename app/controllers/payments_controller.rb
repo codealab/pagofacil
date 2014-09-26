@@ -12,6 +12,7 @@ class PaymentsController < ApplicationController
 	puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx' 
     puts ">> entre a create"
     if @payment.submit(params[:payment])
+    	UserMailer.enviar_correo(@payment).deliver
     	flash[:success]= "peticion lista para enviar"
      
     @payment.enviar

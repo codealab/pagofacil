@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
     	UserMailer.enviar_correo(@payment).deliver
     	flash[:success]= "peticion lista para enviar"
      
-    @payment.enviar
+    @datos = @payment.enviar
     
     
 

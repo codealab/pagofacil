@@ -1,4 +1,22 @@
-<p>Donativo (es una prueba!!!) </p>
+
+
+<% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
+										<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
+										<div class="table-responsive">
+											<dl class="dl-horizontal">
+												
+												<dt> <h2><%= key[0] %>:</h2></dt>
+												<dd> <h4><%= key[1] %></h4></dd>
+											</dl>
+										</div>
+
+									
+										<% end %>
+
+										
+					<% else %>
+					
+		<p>Donativo (es una prueba!!!) </p>
 <h2><p>Monto</p></h2>
 <p>MONTO:$<%= @user.monto%>,</p>
 <p>NÚMERO DE TARJETA: <%= @user.numero_tarjeta%>,</p>
@@ -18,19 +36,7 @@
 <p>MUNICIPIO: <%= @user.municipio%>,</p>
 <p>ESTADO: <%= @user.estado%>,</p>
 <p>PAIS: <%= @user.pais %></p>
-
-
-			<%= @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
-										<div class="table-responsive">
-											<dl class="dl-horizontal">
-												
-												<dt> <h2 class="color-error"><%= key[0] %>:</h2></dt>
-												<dd> <h4><%= key[1] %></h4></dd>
-											</dl>
-										</div> %>
-<% end -%>
-
-
+					<% end %>
 
 
 										

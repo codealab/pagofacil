@@ -2,13 +2,9 @@
 
 <% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
 										<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
-										<div class="table-responsive">
-											<dl class="dl-horizontal">
+
+												<p><%= key[0] %>: <%= key[1] %></p>
 												
-												<dt> <h2><%= key[0] %>:</h2></dt>
-												<dt> <h4><%= key[1] %></h4></dt>
-											</dl>
-										</div>
 
 									
 										<% end %>

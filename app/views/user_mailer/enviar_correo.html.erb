@@ -3,7 +3,7 @@
 <% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
 										<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
 
-												<p><h2><%= key[0] %>:</h2> <h3><%= key[1] %></h3></p>
+												<p><h2><%= key[0] %>:</h2> <%= key[1] %></p>
 												
 
 									

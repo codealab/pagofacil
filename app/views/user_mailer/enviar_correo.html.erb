@@ -1,40 +1,41 @@
 
 
-<% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
-										<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
+	<% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
+	
+				<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
 
-												<p><h2><%= key[0] %>:</h2> <%= key[1] %></p>
-												
-
-									
-										<% end %>
+								<p><h3><%= key[0] %>:</h3><%= key[1] %></p>
+													
 
 										
-					<% else %>
-					
+				<% end %>
+
+											
+	<% else %>
+						
 		<p>Donativo (es una prueba!!!) </p>
-<h2><p>Monto</p></h2>
-<p>MONTO:$<%= @user.monto%>,</p>
-<p>NÚMERO DE TARJETA: <%= @user.numero_tarjeta%>,</p>
-<p> CVT: <%= @user.cvt%>,</p>
-<p>MES DE EXPIRACIÓN: <%= @user.mes_expiracion%>,</p>
-<p>AÑO DE EXPIRACIÓN: <%= @user.anyo_expiracion%>,</p>
-<h2><p>Datos personales</p></h2>
-<p>NOMBRE: <%= @user.nombre%>,</p>
-<p>APELLIDOS: <%= @user.apellidos%>,</p>
-<p>EMAIL: <%= @user.email%>,</p>
-<p>TELÉFONO: <%= @user.telefono%>,</p>
-<p>CELULAR: <%= @user.celular%>,</p>
-<h2><p>Dirección</p></h2>
-<p>CALLE Y NÚMERO: <%= @user.calle_y_numero%>,</p>
-<p>COLONIA: <%= @user.colonia%>,</p>
-<p>CODIGO POSTAL: <%= @user.cp%>,</p>
-<p>MUNICIPIO: <%= @user.municipio%>,</p>
-<p>ESTADO: <%= @user.estado%>,</p>
-<p>PAIS: <%= @user.pais %></p>
-					<% end %>
+		<h2><p>Monto</p></h2>
+		<p>MONTO:$<%= @user.monto%>,</p>
+		<p>NÚMERO DE TARJETA: <%= @user.numero_tarjeta%>,</p>
+		<p> CVT: <%= @user.cvt%>,</p>
+		<p>MES DE EXPIRACIÓN: <%= @user.mes_expiracion%>,</p>
+		<p>AÑO DE EXPIRACIÓN: <%= @user.anyo_expiracion%>,</p>
+		<h2><p>Datos personales</p></h2>
+		<p>NOMBRE: <%= @user.nombre%>,</p>
+		<p>APELLIDOS: <%= @user.apellidos%>,</p>
+		<p>EMAIL: <%= @user.email%>,</p>
+		<p>TELÉFONO: <%= @user.telefono%>,</p>
+		<p>CELULAR: <%= @user.celular%>,</p>
+		<h2><p>Dirección</p></h2>
+		<p>CALLE Y NÚMERO: <%= @user.calle_y_numero%>,</p>
+		<p>COLONIA: <%= @user.colonia%>,</p>
+		<p>CODIGO POSTAL: <%= @user.cp%>,</p>
+		<p>MUNICIPIO: <%= @user.municipio%>,</p>
+		<p>ESTADO: <%= @user.estado%>,</p>
+		<p>PAIS: <%= @user.pais %></p>
+	<% end %>
 
 
-										
+											
 
 

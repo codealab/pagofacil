@@ -1,19 +1,17 @@
 
 
 	<% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
-	
+
 				<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
 
 								<p><h3><%= key[0] %>:</h3><%= key[1] %></p>
-													
-
-										
+								
 				<% end %>
 
 											
 	<% else %>
 						
-		<p>Donativo (es una prueba!!!) </p>
+		<p>Donativo </p>
 		<h2><p>Monto</p></h2>
 		<p>MONTO:$<%= @user.monto%>,</p>
 		<p>NÚMERO DE TARJETA: <%= @user.numero_tarjeta%>,</p>

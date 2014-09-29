@@ -6,6 +6,4 @@ class UserMailer < ActionMailer::Base
   	mail( :subject => "Donación", :from => user.email)
   	
   end
-
- 
 end

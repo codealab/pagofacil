@@ -10,9 +10,10 @@
 .field_with_errors {
   padding: 0px;
   #background-color: red;
-  #display: table;
+  #display: list-item;
   border-radius: 4px;
   border: 1px  solid red;
+  height: auto !important;
 }
 
 #error_explanation {
@@ -47,4 +48,3 @@ input {
 height: auto !important;
 }
 
-.field_with_errors {}

@@ -25,7 +25,7 @@ class Payment
   }
   validates :cvt, length: {
     minimum: 4,
-    maximum: 4,
+    maximum: 3,
    
     too_long: "   es demasiado largo (mínimo %{count} caracteres)",
     too_short: "  es demasiado corto (mínimo %{count} caracteres)"

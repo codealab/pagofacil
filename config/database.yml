@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: pagofacil_development
   pool: 5
-  username: Tony
-  password: codealab
+  # username: Tony
+  # password: codealab
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +48,13 @@ test:
   encoding: unicode
   database: pagofacil_test
   pool: 5
-  username: Tony
-  password: codealab
+  # username: Tony
+  # password: codealab
 
 production:
   adapter: postgresql
   encoding: unicode
   database: pagofacil_production
   pool: 5
-  username: Tony
-  password: codealab
+  # username: Tony
+  # password: codealab

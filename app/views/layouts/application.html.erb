@@ -6,12 +6,25 @@
    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
- <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-<%= yield %>
 
+<body class="wood">
+	<div id="wrap" class="boxed">
+		
+		<%= render 'layouts/header' %>
+		
+		<div class="container" id="wrapper_container">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
+      <%= yield %>
+      <div class="clear"></div>
+    </div>
+
+    <footer>
+	    <%= render 'layouts/footer' %>
+    </footer>
+
+	</div>
 </body>
 </html>

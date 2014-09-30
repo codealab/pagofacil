@@ -42,13 +42,15 @@ $naranja_obscuro:#EEA236;
 }
 
 
-/* Payment */
+/* Payment 
+================================================== */
 .color-error{
 	
 	color: #81519c !important;
 }
 
-/*validaciones marcacion roja en los campos */
+/*validaciones marcacion roja en los campos 
+================================================== */
 .field_with_errors {
   padding: 0px;
   #background-color: red;
@@ -78,9 +80,10 @@ $naranja_obscuro:#EEA236;
   }
   
 }
-
 /*end  validacion marca roja */
-/* forms */
+
+/* forms 
+================================================== */
 input, textarea, select, .uneditable-input {
 border: 1px solid #bbb;
 width: 100%;
@@ -91,7 +94,8 @@ height: auto !important;
 }
 
 
-/* Background */
+/* Background 
+================================================== */
 body.wood { background:url(/assets/wood.jpg) repeat; }
 
 ::selection {
@@ -100,7 +104,8 @@ body.wood { background:url(/assets/wood.jpg) repeat; }
 
 
 
-/* Header */
+/* Header 
+================================================== */
 .navigation ul li a:hover, .navigation ul li a.selected, .navigation ul li.current-menu-parent a, .navigation ul li.current-menu-item a, .navigation ul li ul li a, .services .item, 
 .recent-work .item, .welcome, .qoute, .lightbox .item, .portfolio .item, #options li a, .popular-tags a,/* new code */.tagcloud a, .meta {
 	background: #fbfbfb; 
@@ -111,9 +116,149 @@ body.wood { background:url(/assets/wood.jpg) repeat; }
 	border-bottom:3.5px solid #81519c;
 }
 
+/* header  border negro 
+================================================== */
+header {
+  min-height:91px;
+  border-top:5px solid #585858;
+}
+
+/* wrap 
+================================================== */
+#wrap.boxed {
+  width:990px;
+  margin:25px auto;
+  background:#fff;
+  -webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+}
 
 
-/* Footer */
+
+body{
+  font-family: 'TitilliumText22LBold', Arial, sans-serif!important;
+}
+/*Reg Header linea que divide 
+================================================== */
+ .reg-header {
+
+     border-bottom: solid 1px #eee;
+}
+
+
+/* Site Styles
+================================================== */
+
+
+
+#nav, .testimonials-arrow, .subscribe input.submit, /* new code */ input.subscribe-submit, .social, a.twitter, a.facebook, a.skype, a.linkedin, .next-project, .prev-project, .next-post , div.right, .comment, .comment .title span.right, .comments .children {
+  float:right;
+}
+
+.date, .services .item .square, .js .selectnav, .testimonials .author, .clients ul.items li, .date2, .date3, .icon-box, .pagination li,/* new code */.pagination-comments a, /* new code */.pagination-comments span, img.pic-2 , .image-post.left, .prev-post, .avatar, .form-box,/* new code */ #respond, /* new code */.square-list.related-posts li, /* new code */.most-posts li,
+/* new code */.ads li.banner {
+  float:left;
+}
+
+
+
+
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+    .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .row                                        { margin-bottom: 20px; }
+
+
+    .container .two-thirds.column               { width: 620px; }
+    .container .sixteen.columns                 { width: 940px; }
+
+
+
+
+
+/* Import Basic Files
+================================================== */
+
+@import url("/assets/font/fonts.css");               /* Custom Fonts */
+
+
+/* class welcome (div caja gris donde va el mensaje)
+================================================== */
+.welcome, .qoute {
+  padding:30px 10%;
+  margin:25px 0;
+}
+
+
+
+
+/* Navigational Menu navigation 
+=========================================================*/
+.navigation ul{
+  z-index:100;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/*Top level list items*/
+.navigation ul li{
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left:4px;
+}
+
+/*Top level menu link items style*/
+.navigation ul li a{
+  display: block;
+  padding: 37px 15px 34px 15px;
+}
+
+
+/* Links
+================================================== */
+a, .recent-work .item, .services .item .square, .clients ul.items li img, .subscribe input.submit, /* new code */ input.subscribe-submit, ul.team li, ul.team li img, ul.team li h3, .choose ul li, .our-services ul li h3, .icon-box, .square-list li, .check-list li, .plus-list li, .arrow-list li, .cross-list li, .star-list li, .minus-list li, .arrow2-list li, .circle-list li, .lightbox .item, .tables-column .footer h3 span, .thumbs li a, .button, .post-content form input[type="submit"],
+/* new code */ .widget_categories li, .widget_archive li, .widget_links li, .widget_pages li, .widget_rss li, .widget_meta li, .widget_recent_comments li, .widget_recent_entries li, .pagenav li  { 
+  -webkit-transition: all 0.3s ease-in;  
+    -moz-transition: all 0.3s ease-in;  
+    -ms-transition: all 0.3s ease-in;  
+    -o-transition: all 0.3s ease-in;  
+    transition: all 0.3s ease-in;
+}
+
+a { 
+  text-decoration:none!important;
+  color:#585858;
+}
+
+
+
+/* Aligns
+================================================== */
+.welcome, .recent-work .item, .day, .month, .sti-menu li a, .description, .lightbox .item, .portfolio .item {
+  text-align:center;
+}
+
+
+.welcome, .flex-caption span, .day, .sti-menu li a h2, .qoute h2, .description, #toggle-view li span.link, .tables-column .header h3 span, #under-construction p, /*new code */ h2.big  {
+  font-size:22px;
+}
+
+
+
+
+
+
+
+/* Footer 
+================================================== */
 footer {
 	padding:10px 0 1px 0;
 	margin:25px 0 0 0;
@@ -125,7 +270,13 @@ footer p{
   color:white;
 }
 
+footer {
+  background:#474747;
+}
 
+footer.under-construction {
+  background:#fff;
+}
 
 
 

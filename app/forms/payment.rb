@@ -6,6 +6,7 @@ class Payment
   include ActiveModel::Validations
 
   validates_presence_of :monto, :numero_tarjeta, :cvt,:mes_expiracion, :anyo_expiracion, :nombre, :apellidos, :email, :telefono, :celular, :calle_y_numero, :colonia, :cp, :municipio, :estado, :pais
+  validates_numericality_of  :monto, :numero_tarjeta, :cvt, :mes_expiracion, :anyo_expiracion, :telefono, :celular, :cp
 
 
 
@@ -63,6 +64,11 @@ class Payment
     too_short: "%{value} es demasiado corto (mínimo %{count} caracteres)"
   }
 
+validates :cp, length: {
+  maximum: 9,
+  too_long: "%{value}  es demasiado largo (mínimo %{count} caracteres) "
+
+}
 
 
   attr_accessor  :nombre, :apellidos, :numero_tarjeta, :cp, :cvt, :monto, :mes_expiracion, :anyo_expiracion, :email, :telefono, :celular, :calle_y_numero, :colonia, :municipio, :estado, :pais, :response

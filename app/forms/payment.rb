@@ -20,7 +20,7 @@ class Payment
     minimum: 16,
     maximum: 16,
    
-    too_long: " %{value} es demasiado largo (mínimo %{count} caracteres)",
+    too_long: "%{value} es demasiado largo (mínimo %{count} caracteres)",
     too_short: "%{value} es demasiado corto (mínimo %{count} caracteres)"
   }
   validates :cvt, length: {
@@ -101,7 +101,6 @@ validates :cp, length: {
 
   
   def enviar
-    
     url= "https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json?method=transaccion&data[nombre]=#{self.nombre}&data[apellidos]=#{self.apellidos}&data[numeroTarjeta]=#{self.numero_tarjeta}&data[cvt]=#{self.cvt}&data[cp]=#{self.cp}&data[mesExpiracion]=#{self.mes_expiracion}&data[anyoExpiracion]=#{self.anyo_expiracion}&data[monto]=#{self.monto}&data[idSucursal]=e84f1d3b924c07e52a8c999047373106c10e582c&data[idUsuario]=82d4a1cf37137e7147602a7e6fa64d8e6c0c0b9c&data[idServicio]=3&data[email]=#{self.email}&data[telefono]=#{self.telefono}&data[celular]=#{self.celular}&data[calleyNumero]=#{self.calle_y_numero}&data[colonia]=#{self.colonia}&data[municipio]=#{self.municipio}&data[estado]=#{self.estado}&data[pais]=#{self.pais}"
 
     puts "Lectura de url"
@@ -110,12 +109,22 @@ validates :cp, length: {
       http_request = Net::HTTP.get_response(URI.parse(encoded_url)).body
       data = ActiveSupport::JSON.decode(http_request) #.to_json
       self.response = data
+      puts "Esto es el valor de DATA xxxxxxxxxxxxxxxxxxxxxxxxx"
       puts data
-      if data["WebServices_Transacciones"]["transaccion"]["error"] == 1
-        true
+
+      puts "Esto es el valor de ERROR xxxxxxxxxxxxxxxxxxxxxxxxx"
+      puts data["WebServices_Transacciones"]["transaccion"]["error"]
+
+      if data["WebServices_Transacciones"]["transaccion"]["error"]
+        self.pago_facil_errors = data["WebServices_Transacciones"]["transaccion"]["error"]
       else
-        false
+        self.pago_facil_errors = false
       end
+
+      puts "Esto es el valor de Autorizado xxxxxxxxxxxxxxxxxxxxxxxxx"
+      puts data["WebServices_Transacciones"]["transaccion"]["autorizado"] == "1"
+
+      data["WebServices_Transacciones"]["transaccion"]["autorizado"] == "1"
   end
 
 end

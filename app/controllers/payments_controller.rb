@@ -11,21 +11,20 @@ class PaymentsController < ApplicationController
 	def create
 		@payment = Payment.new
     if @payment.submit(params[:payment]) 
+    	puts "RRRRRRRRRRRRRRRR"
     	if @payment.enviar
-    		UserMailer.enviar_correo(@payment).deliver
-    		render 'new'
-    	else
-		     flash[:success]= "Operación exitosa"
+    		 flash[:success]= "Operación exitosa"
 		     UserMailer.enviar_correo(@payment).deliver
 		     render 'index'
+    	else
+		    UserMailer.enviar_correo(@payment).deliver
+    		render 'new'
 		  end
     else
       render 'new'
     end
 		
   end 
-    puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
-
 
 end
 

@@ -1,16 +1,17 @@
 
 
-	<% if @payment.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
 
-				<% @payment.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
+<% if @payment.response %>
+      <h4>Errores Pago Facil</h4>
+      <ul>
+        <% @payment.response["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>              
+        <li><%= key[0] %>: <%= key[1] %></li>
+        <% end %>
+      </ul>
+<% end %>
 
-								<p><h3><%= key[0] %>:</h3><%= key[1] %></p>
-								
-				<% end %>
 
-											
-	<% else %>
-						
+
 		<p>Donativo </p>
 		<h2><p>Monto</p></h2>
 		<p>MONTO:$<%= @payment.monto%>,</p>
@@ -31,7 +32,6 @@
 		<p>MUNICIPIO: <%= @payment.municipio%>,</p>
 		<p>ESTADO: <%= @payment.estado%>,</p>
 		<p>PAIS: <%= @payment.pais %></p>
-	<% end %>
 
 
 											

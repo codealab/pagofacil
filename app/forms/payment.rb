@@ -111,6 +111,11 @@ validates :cp, length: {
       data = ActiveSupport::JSON.decode(http_request) #.to_json
       self.response = data
       puts data
+      if data["WebServices_Transacciones"]["transaccion"]["error"] == 1
+        true
+      else
+        false
+      end
   end
 
 end

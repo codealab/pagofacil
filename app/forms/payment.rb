@@ -5,7 +5,7 @@ class Payment
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  validates_presence_of :monto, :numero_tarjeta, :cvt,:mes_expiracion, :anyo_expiracion, :nombre, :apellidos, :email, :telefono, :celular, :calle_y_numero, :colonia, :cp, :municipio, :estado, :pais
+  validates_presence_of :monto, :numero_tarjeta, :cvt,:mes_expiracion, :anyo_expiracion, :nombre, :apellidos, :email, :telefono, :celular, :calle_y_numero, :colonia, :cp, :municipio, :estado
   validates_numericality_of  :monto, :numero_tarjeta, :cvt, :mes_expiracion, :anyo_expiracion, :telefono, :celular, :cp
 
 
@@ -71,7 +71,7 @@ validates :cp, length: {
 }
 
 
-  attr_accessor  :nombre, :apellidos, :numero_tarjeta, :cp, :cvt, :monto, :mes_expiracion, :anyo_expiracion, :email, :telefono, :celular, :calle_y_numero, :colonia, :municipio, :estado, :pais, :response
+  attr_accessor  :nombre, :apellidos, :numero_tarjeta, :cp, :cvt, :monto, :mes_expiracion, :anyo_expiracion, :email, :telefono, :celular, :calle_y_numero, :colonia, :municipio, :estado, :pais, :response, :pago_facil_errors
 
   def persisted?
     false
@@ -93,9 +93,9 @@ validates :cp, length: {
     self.colonia = params[:colonia]
     self.municipio = params[:municipio]
     self.estado = params[:estado]
-    self.pais = params[:pais]
+    self.pais = "Mexico"
 
-    valid?
+     valid?
 
   end
 
@@ -107,16 +107,9 @@ validates :cp, length: {
 
       encoded_url = URI.encode(url)
       http_request = Net::HTTP.get_response(URI.parse(encoded_url)).body
-      puts ">> entre a decodificar el json"
       data = ActiveSupport::JSON.decode(http_request) #.to_json
-    
-    puts ">> entre a asignar data"
       self.response = data
-
-
   end
 
-
-   
 end
 

@@ -53,10 +53,8 @@ $naranja_obscuro:#EEA236;
 ================================================== */
 .field_with_errors {
   padding: 0px;
-  #background-color: red;
-  #display: list-item;
   border-radius: 4px;
-  border: 1px  solid red;
+  border: 1px  solid $morado_claro;
   height: auto !important;
 }
 
@@ -91,6 +89,39 @@ margin-bottom: 0px;
 }
 input {
 height: auto !important;
+}
+
+.campo {
+  display:block;
+  line-height: 3;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  clear: both;
+
+}
+
+.col-md-offset-1 {
+margin-left: 14.333333%;
+}
+
+
+
+
+/* Titles 
+================================================== */
+
+.linea {
+  background-color:$morado;
+  display: block;
+  width: 50px;
+  height: 5px;
+  margin: 7px 0 -11px 0;
+
+}
+
+h4 {
+  padding-top:20px;
+  clear: both;
 }
 
 
@@ -136,8 +167,11 @@ header {
 
 
 body{
-  font-family: 'TitilliumText22LBold', Arial, sans-serif!important;
+  font-family: 'TitilliumText22LRegular', Arial, sans-serif!important;
+  color:#686868;
 }
+
+
 /*Reg Header linea que divide 
 ================================================== */
  .reg-header {
@@ -190,10 +224,13 @@ body{
 
 /* class welcome (div caja gris donde va el mensaje)
 ================================================== */
-.welcome, .qoute {
+.welcome p{
   padding:30px 10%;
   margin:25px 0;
+  font-size:19px;
+  color:#686868;
 }
+
 
 
 
@@ -247,7 +284,7 @@ a {
 }
 
 
-.welcome, .flex-caption span, .day, .sti-menu li a h2, .qoute h2, .description, #toggle-view li span.link, .tables-column .header h3 span, #under-construction p, /*new code */ h2.big  {
+.flex-caption span, .day, .sti-menu li a h2, .qoute h2, .description, #toggle-view li span.link, .tables-column .header h3 span, #under-construction p, /*new code */ h2.big  {
   font-size:22px;
 }
 

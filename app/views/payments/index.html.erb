@@ -1,17 +1,6 @@
 <div class="container content">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 reg-page">
-			<% if @payment.response["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
-					<% @payment.response["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
-							<div class="table-responsive">
-								<dl class="dl-horizontal">
-									<dt> <h2 class="color-error"><%= key[0] %>:</h2></dt>
-									<dd> <h4><%= key[1] %></h4></dd>
-								</dl>
-							</div>
-					<% end %>
-			
-			<% else %>
 			
 				<div id="welcome">
 					<div class="sixteen columns col-md-7">
@@ -25,7 +14,6 @@
 						</div>
 					</div>
 				</div>
-			<% end %>
 		</div>
 	</div>
 </div>

@@ -1,25 +1,24 @@
 class PaymentsController < ApplicationController
 
 	def index
-		
 	end
+
 	def new
 		@payment = Payment.new
 	end
+
+
 	def create
 		@payment = Payment.new
-		
-	puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxx' 
-    puts ">> entre a create"
-    if @payment.submit(params[:payment])
-    	UserMailer.enviar_correo(@payment).deliver
-    	flash[:success]= "peticion lista para enviar"
-     
-     @payment.enviar
-    
-    
-
-      render 'index'
+    if @payment.submit(params[:payment]) 
+    	if @payment.enviar
+    		UserMailer.enviar_correo(@payment).deliver
+    		render 'new'
+    	else
+		     flash[:success]= "Operación exitosa"
+		     UserMailer.enviar_correo(@payment).deliver
+		     render 'index'
+		  end
     else
       render 'new'
     end

@@ -11,3 +11,16 @@
     </div>
   </div>
 <% end %>
+
+<% if @payment.response %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <h4>Errores Pago Facil</h4>
+      <ul>
+        <% @payment.response["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>              
+        <li><%= key[0] %>: <%= key[1] %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

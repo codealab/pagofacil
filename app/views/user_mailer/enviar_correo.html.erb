@@ -1,8 +1,8 @@
 
 
-	<% if @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
+	<% if @payment.enviar["WebServices_Transacciones"]["transaccion"]["error"].count >0 %>
 
-				<% @user.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
+				<% @payment.enviar["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>
 
 								<p><h3><%= key[0] %>:</h3><%= key[1] %></p>
 								
@@ -13,24 +13,24 @@
 						
 		<p>Donativo </p>
 		<h2><p>Monto</p></h2>
-		<p>MONTO:$<%= @user.monto%>,</p>
-		<p>NÚMERO DE TARJETA: <%= @user.numero_tarjeta%>,</p>
-		<p> CVT: <%= @user.cvt%>,</p>
-		<p>MES DE EXPIRACIÓN: <%= @user.mes_expiracion%>,</p>
-		<p>AÑO DE EXPIRACIÓN: <%= @user.anyo_expiracion%>,</p>
+		<p>MONTO:$<%= @payment.monto%>,</p>
+		<p>NÚMERO DE TARJETA: <%= @payment.numero_tarjeta%>,</p>
+		<p> CVT: <%= @payment.cvt%>,</p>
+		<p>MES DE EXPIRACIÓN: <%= @payment.mes_expiracion%>,</p>
+		<p>AÑO DE EXPIRACIÓN: <%= @payment.anyo_expiracion%>,</p>
 		<h2><p>Datos personales</p></h2>
-		<p>NOMBRE: <%= @user.nombre%>,</p>
-		<p>APELLIDOS: <%= @user.apellidos%>,</p>
-		<p>EMAIL: <%= @user.email%>,</p>
-		<p>TELÉFONO: <%= @user.telefono%>,</p>
-		<p>CELULAR: <%= @user.celular%>,</p>
+		<p>NOMBRE: <%= @payment.nombre%>,</p>
+		<p>APELLIDOS: <%= @payment.apellidos%>,</p>
+		<p>EMAIL: <%= @payment.email%>,</p>
+		<p>TELÉFONO: <%= @payment.telefono%>,</p>
+		<p>CELULAR: <%= @payment.celular%>,</p>
 		<h2><p>Dirección</p></h2>
-		<p>CALLE Y NÚMERO: <%= @user.calle_y_numero%>,</p>
-		<p>COLONIA: <%= @user.colonia%>,</p>
-		<p>CODIGO POSTAL: <%= @user.cp%>,</p>
-		<p>MUNICIPIO: <%= @user.municipio%>,</p>
-		<p>ESTADO: <%= @user.estado%>,</p>
-		<p>PAIS: <%= @user.pais %></p>
+		<p>CALLE Y NÚMERO: <%= @payment.calle_y_numero%>,</p>
+		<p>COLONIA: <%= @payment.colonia%>,</p>
+		<p>CODIGO POSTAL: <%= @payment.cp%>,</p>
+		<p>MUNICIPIO: <%= @payment.municipio%>,</p>
+		<p>ESTADO: <%= @payment.estado%>,</p>
+		<p>PAIS: <%= @payment.pais %></p>
 	<% end %>
 
 

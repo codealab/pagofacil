@@ -1,13 +1,40 @@
-
+<img src="/assets/portada_1.jpg" alt="De Cero A Tres Fundación A.C." class="portadas"><br><br>
 <div id="welcome">
 	<div class="sixteen columns col-md-12">
 		<div class="welcome">
 			<p>GRACIAS POR TU DONATIVO</p>
-			<p> ¡El apoyo de personas como tú, nos permite ayudar a niñas y niños en México! </p>
+			<p>¡El apoyo de personas como tú, nos permite ayudar a niñas y niños en México! </p>
 			</div>
 		</div>
 </div>
 
+
+
 <div class="row">
 		<center><a class="btn btn-info btn-lg" href="http://deceroatres.org" role="button">Regresar a deceroatres.org</a></center>
+</div>
+
+<div class="comprobante">
+			<h3>Comprobante Donativo </h3>
+
+			<p style="color:red;">Es importante que consideres que el cargo aparecerá en tu estado de cuenta como Pago Facil</p>
+
+			<h4>Donativo </h4>
+			<h4><p>Monto</p></h4>
+			<p>MONTO:$<%= @payment.monto%></p>
+			<h4><p>Datos personales</p></h4>
+			<p>NOMBRE: <%= @payment.nombre%></p>
+			<p>APELLIDOS: <%= @payment.apellidos%></p>
+			<p>EMAIL: <%= @payment.email%></p>
+			<p>TELÉFONO: <%= @payment.telefono%></p>
+			<p>CELULAR: <%= @payment.celular%></p>
+			<h4><p>Dirección</p></h4>
+			<p>CALLE Y NÚMERO: <%= @payment.calle_y_numero%></p>
+			<p>COLONIA: <%= @payment.colonia%></p>
+			<p>CODIGO POSTAL: <%= @payment.cp%></p>
+			<p>MUNICIPIO: <%= @payment.municipio%></p>
+			<p>ESTADO: <%= @payment.estado%></p>
+			<p>PAIS: <%= @payment.pais %></p>
+
+			<center><p>Pronto Recibiras tu Recibo de donativo, cualquier aclaración sofita@deceroatres.com</p></center>
 </div>

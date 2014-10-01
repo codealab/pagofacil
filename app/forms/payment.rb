@@ -13,7 +13,7 @@ class Payment
   
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   
-   validates_numericality_of :monto,  {:greater_than_or_equal_to => 1 , message: " debe ser mayor o igual a $100 pesos"}
+   validates_numericality_of :monto,  {:greater_than_or_equal_to => 50 , message: " debe ser mayor o igual a $100 pesos"}
   
 
   validates :numero_tarjeta, length: {
@@ -101,7 +101,11 @@ validates :cp, length: {
 
   
   def enviar
-    url= "https://www.pagofacil.net/ws/public/Wsrtransaccion/index/format/json?method=transaccion&data[nombre]=#{self.nombre}&data[apellidos]=#{self.apellidos}&data[numeroTarjeta]=#{self.numero_tarjeta}&data[cvt]=#{self.cvt}&data[cp]=#{self.cp}&data[mesExpiracion]=#{self.mes_expiracion}&data[anyoExpiracion]=#{self.anyo_expiracion}&data[monto]=#{self.monto}&data[idSucursal]=23946b7b55a57350e661932e09121a6614d3cdaa&data[idUsuario]=239850875eeccc6448e15066fede7df24159a278&data[idServicio]=3&data[email]=#{self.email}&data[telefono]=#{self.telefono}&data[celular]=#{self.celular}&data[calleyNumero]=#{self.calle_y_numero}&data[colonia]=#{self.colonia}&data[municipio]=#{self.municipio}&data[estado]=#{self.estado}&data[pais]=#{self.pais}"
+
+    url_prod = "https://www.pagofacil.net/ws/public/Wsrtransaccion/index/format/json?method=transaccion&data[nombre]=#{self.nombre}&data[apellidos]=#{self.apellidos}&data[numeroTarjeta]=#{self.numero_tarjeta}&data[cvt]=#{self.cvt}&data[cp]=#{self.cp}&data[mesExpiracion]=#{self.mes_expiracion}&data[anyoExpiracion]=#{self.anyo_expiracion}&data[monto]=#{self.monto}&data[idSucursal]=23946b7b55a57350e661932e09121a6614d3cdaa&data[idUsuario]=239850875eeccc6448e15066fede7df24159a278&data[idServicio]=3&data[email]=#{self.email}&data[telefono]=#{self.telefono}&data[celular]=#{self.celular}&data[calleyNumero]=#{self.calle_y_numero}&data[colonia]=#{self.colonia}&data[municipio]=#{self.municipio}&data[estado]=#{self.estado}&data[pais]=#{self.pais}"
+    url_prue = "https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json?method=transaccion&data[nombre]=#{self.nombre}&data[apellidos]=#{self.apellidos}&data[numeroTarjeta]=#{self.numero_tarjeta}&data[cvt]=#{self.cvt}&data[cp]=#{self.cp}&data[mesExpiracion]=#{self.mes_expiracion}&data[anyoExpiracion]=#{self.anyo_expiracion}&data[monto]=#{self.monto}&data[idSucursal]=e84f1d3b924c07e52a8c999047373106c10e582c&data[idUsuario]=82d4a1cf37137e7147602a7e6fa64d8e6c0c0b9c&data[idServicio]=3&data[email]=#{self.email}&data[telefono]=#{self.telefono}&data[celular]=#{self.celular}&data[calleyNumero]=#{self.calle_y_numero}&data[colonia]=#{self.colonia}&data[municipio]=#{self.municipio}&data[estado]=#{self.estado}&data[pais]=#{self.pais}"
+
+    url = url_prod
 
     puts "Lectura de url"
 
@@ -109,20 +113,12 @@ validates :cp, length: {
       http_request = Net::HTTP.get_response(URI.parse(encoded_url)).body
       data = ActiveSupport::JSON.decode(http_request) #.to_json
       self.response = data
-      puts "Esto es el valor de DATA xxxxxxxxxxxxxxxxxxxxxxxxx"
-      puts data
-
-      puts "Esto es el valor de ERROR xxxxxxxxxxxxxxxxxxxxxxxxx"
-      puts data["WebServices_Transacciones"]["transaccion"]["error"]
 
       if data["WebServices_Transacciones"]["transaccion"]["error"]
         self.pago_facil_errors = data["WebServices_Transacciones"]["transaccion"]["error"]
       else
         self.pago_facil_errors = false
       end
-
-      puts "Esto es el valor de Autorizado xxxxxxxxxxxxxxxxxxxxxxxxx"
-      puts data["WebServices_Transacciones"]["transaccion"]["autorizado"] == "1"
 
       data["WebServices_Transacciones"]["transaccion"]["autorizado"] == "1"
   end

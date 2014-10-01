@@ -1,10 +1,19 @@
 Pagofacil::Application.routes.draw do
+  
+
+
   get "mailings/index"
   get "mailings/new"
   post "mailings/create"
+
   get "home/index"
   get "payments/new"
   post "payments/create"
+  get "payments/index"
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

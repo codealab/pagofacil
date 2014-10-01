@@ -3,11 +3,9 @@
 
 <% if @payment.response %>
       <h4>Errores Pago Facil</h4>
-      <ul>
-        <% @payment.response["WebServices_Transacciones"]["transaccion"]["error"].each do |key|%>              
-        <li><%= key[0] %>: <%= key[1] %></li>
-        <% end %>
-      </ul>
+
+      <%= @payment.response %>
+
 <% end %>
 
 

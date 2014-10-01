@@ -110,6 +110,7 @@ validates :cp, length: {
       http_request = Net::HTTP.get_response(URI.parse(encoded_url)).body
       data = ActiveSupport::JSON.decode(http_request) #.to_json
       self.response = data
+      puts data
   end
 
 end

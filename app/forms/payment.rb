@@ -17,8 +17,8 @@ class Payment
   
 
   validates :numero_tarjeta, length: {
-    minimum: 16,
-    maximum: 16,
+    minimum: 14,
+    maximum: 18,
    
     too_long: "%{value} es demasiado largo (mínimo %{count} caracteres)",
     too_short: "%{value} es demasiado corto (mínimo %{count} caracteres)"
@@ -50,15 +50,15 @@ class Payment
   
 
   validates :celular, length: {
-    minimum: 10,
-    maximum: 10,
+    minimum: 8,
+    maximum: 14,
    
     too_long: " %{value}  es demasiado largo (mínimo %{count} caracteres)",
     too_short: "%{value}  es demasiado corto (mínimo %{count} caracteres)"
   }
   validates :telefono, length: {
-    minimum: 10,
-    maximum: 10,
+    minimum: 8,
+    maximum: 14,
    
     too_long: "%{value}  es demasiado largo (mínimo %{count} caracteres) ",
     too_short: "%{value} es demasiado corto (mínimo %{count} caracteres)"

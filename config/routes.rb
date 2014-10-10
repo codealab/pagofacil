@@ -10,6 +10,7 @@ Pagofacil::Application.routes.draw do
   get "payments/new"
   post "payments/create"
   get "payments/index"
+  match '/aviso_privacidad', to: 'home#aviso_privacidad', via: 'get'
 
 
 
